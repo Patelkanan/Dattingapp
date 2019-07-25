@@ -3,34 +3,20 @@ using System;
 using Dattingapp.API.Models.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Dattingapp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190722054229_AddedUserEntity")]
+    partial class AddedUserEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
-
-            modelBuilder.Entity("Dattingapp.API.Models.Demo", b =>
-                {
-                    b.Property<int>("DemoId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("DAddress");
-
-                    b.Property<string>("DemoName");
-
-                    b.Property<int>("Phone");
-
-                    b.HasKey("DemoId");
-
-                    b.ToTable("Demos");
-                });
 
             modelBuilder.Entity("Dattingapp.API.Models.User", b =>
                 {
